@@ -24,7 +24,16 @@ class Iterator
   end
 
   def reverse_num
-    @num.to_s.reverse.to_i
+    num = @num
+    result = 0
+
+    while num > 0
+      result *= 10
+      result += (num % 10)
+      num /= 10
+    end
+
+    result
   end
 end
 
